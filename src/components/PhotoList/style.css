@@ -48,11 +48,29 @@
     }
   }
   
+  
   .pics {
     opacity: 0;
     animation: fadeIn 0.5s forwards; /* fadeIn animation for 0.5s */
     cursor: pointer;
+    position: relative;
   }
+
+ 
+  .author-name {
+    position: absolute;
+    z-index: 3;
+    bottom: 0%;
+    display: block;
+    background: linear-gradient(to right, rgba(240, 248, 255, 0.2), rgba(240, 248, 255, 0.8) 15%, rgba(240, 248, 255, 0)); /* Gradient from aliceblue to a lighter blue */
+    font-size: 1.5em;
+    width: 100%;
+    padding-left: 16px;
+    height: 1.8em;
+    overflow: hidden;
+    line-height: 1.8em;
+}
+
 
   
   /* Responsive layout - makes a two column-layout instead of four columns */

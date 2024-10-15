@@ -97,7 +97,9 @@ const PhotoList = () => {
           {column1.map((item, index) => (
               <div onClick={()=>handleImageClick(item)} key={index} className="pics">
                 <img src={item?.urls?.small} alt={item?.alt_description || item?.description} style={{ width: '100%' }} />
+                <p className="author-name">{item?.user?.name || 'Unknown Author'}</p>
             </div>
+            
           ))}
         </div>
         
@@ -105,6 +107,7 @@ const PhotoList = () => {
           {column2?.map((item, index) => (
               <div onClick={()=>handleImageClick(item)} key={index} className="pics">
                 <img src={item?.urls?.small} alt={item?.alt_description || item?.description} style={{ width: '100%' }} />
+                <p className="author-name">{item?.user?.name || 'Unknown Author'}</p>
               </div>
           ))}
         </div> 
@@ -113,6 +116,7 @@ const PhotoList = () => {
           {column3?.map((item, index) => (
               <div  onClick={()=>handleImageClick(item)} key={index} className="pics">
                 <img src={item?.urls?.small} alt={item?.alt_description || item?.description} style={{ width: '100%' }} />
+                <p className="author-name">{item?.user?.name || 'Unknown Author'}</p>
             </div>
           ))}
         </div>
@@ -121,6 +125,7 @@ const PhotoList = () => {
           {column4?.map((item, index) => (
             <div onClick={()=>handleImageClick(item)} key={index} className="pics">
               <img src={item?.urls?.small} alt={item?.alt_description || item?.description} style={{ width: '100%' }} />
+              <p className="author-name">{item?.user?.name || 'Unknown Author'}</p>
             </div>
           ))}
         </div>
