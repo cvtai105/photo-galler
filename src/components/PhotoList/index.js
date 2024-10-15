@@ -62,21 +62,18 @@ const PhotoList = () => {
 
   //add event listener to window
   useEffect(() => {
+    let debounceTimeout;
     const handleScroll = () => {
-      console.log('scrolling', isLoading, page);
-      const scrollTop = window.scrollY; // Amount scrolled from the top
-      const windowHeight = window.innerHeight; // Height of the viewport
-      const documentHeight = document.documentElement.scrollHeight; // Total height of the document
-  
-      // Check if the user has scrolled to the bottom
-      if (scrollTop + windowHeight >= documentHeight - 200) {
-          console.log('Scrolled to the bottom of the page!');
-          setPage(prevPage => {
-              console.log('New page:', prevPage + 1); // This will now log the correct value
-              return prevPage + 1;
-          });
-          console.log(page);
-      }
+      clearTimeout(debounceTimeout);
+      debounceTimeout = setTimeout(() => {
+        const scrollTop = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+
+        if (scrollTop + windowHeight >= documentHeight - 100 && !isLoading) {
+          setPage(prevPage => prevPage + 1);
+        }
+      }, 200);  // adjust the delay as needed
     };
 
     if (!isLoading) {
