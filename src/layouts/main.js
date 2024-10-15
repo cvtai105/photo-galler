@@ -1,12 +1,12 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import React from 'react';
 
 function Layout(){
     return (
         <>
-            <div class="header">
+            <Link to={"photos"} className="header">
                 <h1>Image Gallery</h1>
-            </div>
+            </Link>
             <Outlet/>
         </>
     )

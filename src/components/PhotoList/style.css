@@ -1,4 +1,12 @@
 
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial;
+  }
 .header {
     text-align: center;
     padding: 32px;
@@ -21,6 +29,31 @@
     margin-top: 8px;
     vertical-align: middle;
   }
+  .loading-indicator-container {
+    padding: 30px;
+    display: flex;              /* Enable flexbox */
+    justify-content: center;    /* Center horizontally */
+    align-items: center;        /* Center vertically */
+}
+
+/* Add this to your style.css file */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .pics {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards; /* fadeIn animation for 0.5s */
+    cursor: pointer;
+  }
+
   
   /* Responsive layout - makes a two column-layout instead of four columns */
   @media (max-width: 800px) {
@@ -38,38 +71,7 @@
     }
   }
 
-.gallery{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    gap: 12px; /* Space between grid items */ 
-    padding: 0 12px  
-}
-
-.gallery .pics {
-    -webkit-transition: all 350ms ease;
-    transition: all 350ms ease;
-    cursor: pointer;
-    margin-bottom: 12px;
-}
-
-.loading-indicator-container {
-    display: flex;              /* Enable flexbox */
-    justify-content: center;    /* Center horizontally */
-    align-items: center;        /* Center vertically */
-}
 
 
-@media (max-width: 991px){
-    .gallery{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
-        gap: 12px; /* Space between grid items */ 
-        padding: 0 12px     
-    }
-}
 
-@media (max-width: 480px){
-    .gallery{
-        display: block  
-    }
-}
+
